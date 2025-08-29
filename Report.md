@@ -77,3 +77,24 @@ The banded implementation provides substantial efficiency improvements through:
 2. **Specialized algorithms**: Banded-specific solvers with lower computational complexity
 3. **Memory efficiency**: Minimized data movement and storage overhead
 4. **Maintained mathematical integrity**: Equivalent results with optimized computation
+
+# Improved Timestepping Method - Report
+
+## Banded Matrix Optimization
+
+In the updated `timestepping_improved.f90` implementation, I leveraged specialized LAPACK and BLAS subroutines optimized for banded matrices:
+
+- **DGBMV**: Used for computing solutions to banded matrix equations $\hat{D_x} \boldsymbol{x} = \boldsymbol{b}$
+- **DGBSV**: Employed in `banded_helmholtz_solve.f90` for efficient linear solves
+- These routines are specifically designed for banded structures, providing theoretical computational efficiency gains
+
+## Algorithmic Enhancements
+
+### Vector Computation Optimization
+For updating vectors $\boldsymbol{u}$, $\boldsymbol{r}$ in Algorithm 1 (lines [2], [3], [7]), I implemented a targeted approach:
+
+- **Analysis**: Recognized that the dot product $\boldsymbol{d_2}(\boldsymbol{d_1}^T \boldsymbol{\eta})$ produces a vector with only one non-zero element
+- **Implementation**: Instead of performing full vector operations, I isolated the specific affected element
+- **Example**: In line [2], after `DGBMV` computes $\boldsymbol{u} = \boldsymbol{u} - \nu\theta\hat{D_x}\boldsymbol{\eta}$, I specifically update:
+  ```fortran
+  u(n) = u(n) - νθ·η(1)
