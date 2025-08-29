@@ -11,10 +11,3 @@ The project includes:
 * **Field comparison**: Function `field_delta` calculates the difference between two sets of fields to quantify numerical accuracy.  
 
 The code is structured for **clarity and efficiency**, exploiting properties of banded and symmetric matrices and using BLAS/LAPACK routines where appropriate. A Makefile is included for compilation.  
-
-## How to use
-
-1. Compile the code with `make`.  
-2. Run the program with `./shallow_water` (or the generated executable).  
-3. Visualize results using `python visualise.py`.  
-
