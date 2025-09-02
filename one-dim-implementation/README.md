@@ -1,6 +1,6 @@
 # One-Dimensional Shallow Water Model
 
-This repository contains the implementation of a **one-dimensional Shallow Water model (SWM)** using **FORTRAN95** with double precision arithmetic. Not all parts of the code were implemented by me; the parts completed by me are indicated below.  
+This folder contains the implementation of a **one-dimensional Shallow Water model (SWM)** using **FORTRAN95** with double precision arithmetic. Not all parts of the code were implemented by me; the parts completed by me are indicated below.  
 
 ## Project Components
 
