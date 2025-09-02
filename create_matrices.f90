@@ -57,13 +57,12 @@ inzDx = inzDx + 1
 end do
 Dx%ii(n+1) = inzDx
 
-*********************************************** setting up Dy *********************
 inzDy=1
 do nrow=1,n
 ! working out 2d coordinates i and j
 j=(nrow-1)/m+1
 i=nrow-(j-1)*m
-! === Dy ===
+
 Dy%ii(nrow)=inzDy
 ! working out coordinates of neighbours in x-direction
 jpl=j+1
@@ -80,5 +79,5 @@ Dy%aa(inzDy)=-1.0_rk
 inzDy=inzDy+1
 end do
 Dy%ii(n+1)=inzDy
-! ***********************
+
 end subroutine create_matrices
