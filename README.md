@@ -28,7 +28,6 @@ This implementation was developed as part of a high-performance computing curric
 
 ```
 ├── sw_main.f90          # Main program
-├── header.f90           # Type definitions and module declarations
 ├── matmult.f90          # Matrix-vector multiplication operations
 ├── eta_peak.f90         # Initial condition setup
 ├── average.f90          # Parallel averaging across processes
