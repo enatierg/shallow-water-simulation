@@ -1,8 +1,4 @@
-Shallow Water Equations Solver
-Overview
-Parallel Fortran/MPI implementation of a shallow water equations solver using leapfrog integration with periodic boundary conditions.
 
-.
 ├── sw_main.f90          # Main program
 ├── header.f90           # Type definitions
 ├── matmul.f90           # Matrix operations
